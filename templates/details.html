@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 <!---->>
-{% block title %} หน้าแรกเกี่ยวกับเฮา {% endblock title %}
+{% block title %} ข้อมูลนักศึกษา {% endblock title %}
 <!---->>
 {% block content %} 
 
@@ -20,7 +20,7 @@
       {% for student in students  %}
       <tr>
         <th scope="row">1</th>
-        <td><a href="{% url 'details' student.id %}">{{ student.std_id }}</a></td>
+        <td>{{ student.std_id }}</td>
         <td>{{ student.prefix }}</td>
         <td>{{ student.name }}</td>
         <td>{{ student.lastname }}</td>
