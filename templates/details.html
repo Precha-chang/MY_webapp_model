@@ -1,33 +1,33 @@
 {% extends 'base.html' %}
-<!---->>
+<!---->
 {% block title %} ข้อมูลนักศึกษา {% endblock title %}
-<!---->>
-{% block content %} 
-
+<!---->
+{% block content %}
+<!---->
 <table class="table">
-    <thead>
-      <tr>
-        <th scope="col">#</th>
-        <th scope="col">ID</th>
-        <th scope="col">Prefix</th>
-        <th scope="col">Name</th>
-        <th scope="col">Lastname</th>
-        <th scope="col">Phone</th>
-        <th scope="col">Address</th>
-      </tr>
-    </thead>
-    <tbody>
-      {% for student in students  %}
-      <tr>
-        <th scope="row">1</th>
-        <td>{{ student.std_id }}</td>
-        <td>{{ student.prefix }}</td>
-        <td>{{ student.name }}</td>
-        <td>{{ student.lastname }}</td>
-        <td>{{ student.phone }}</td>
-        <td>{{ student.address }}</td>      
-      </tr>
-      {% endfor %}
-    </tbody>
-  </table>
- {% endblock content %}
+  <tr>
+    <td>ID</td>
+    <td>{{ student.std_id }}</td>
+  </tr>
+  <tr>
+    <td>Prefix</td>
+    <td>{{ student.prefix_str }}</td>
+  </tr>
+  <tr>
+    <td>Name</td>
+    <td>{{ student.name }}</td>
+  </tr>
+  <tr>
+    <td>Lastname</td>
+    <td>{{ student.lastname }}</td>
+  </tr>
+  <tr>
+    <td>Phone</td>
+    <td>{{ student.phone }}</td>
+  </tr>
+  <tr>
+    <td>Address</td>
+    <td>{{ student.address }}</td>
+  </tr>
+</table>
+{% endblock content %}

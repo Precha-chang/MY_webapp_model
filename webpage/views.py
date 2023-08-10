@@ -19,8 +19,19 @@ def about (request):
 def contact(request):
     return render(request,"contact.html")
 
-def studentDetails(request, id) :
+def studentDetails(request, id):
     context = {}
-    student = models.Student.objects.get(id=id)
-    context['student'] = student
-    return render(request,"details.html")
+    students = models.Student.objects.filter(id=id)
+    for student in students:
+        student.prefix_str = getModelChoice(
+            student.prefix, models.prefix_choices)
+
+        context['student'] = student
+
+    return render(request, 'details.html', context)
+
+
+def getModelChoice(num, choices):
+    for choice in choices:
+        if choice[0] == num:
+            return choice[1]
